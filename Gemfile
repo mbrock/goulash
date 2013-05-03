@@ -51,3 +51,5 @@ end
 group :test do
   gem 'capybara', '2.0.2'
 end
+
+gem 'devise', github: 'plataformatec/devise', branch: 'rails4'
