@@ -1,5 +1,7 @@
 <article class="row">
-  <h3><%= @post.title %></h2>
-  <h4>By <%= @post.user.email %></h3>
+  <h3>
+    <%= @post.title %>
+    <small>By <%= @post.user.email %></small>
+  </h3>
   <%= raw @text_html %>
 </article>

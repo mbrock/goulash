@@ -30,10 +30,9 @@ feature 'Viewing posts' do
 
     within('h3') do
       expect(page).to have_content('First post')
-    end
-
-    within('h4') do
-      expect(page).to have_content('By foo@example.com')
+      within('small') do
+        expect(page).to have_content('By foo@example.com')
+      end
     end
 
     expect(page).to have_content('This is my first post.')
