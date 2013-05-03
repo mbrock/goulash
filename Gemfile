@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 1.0.1'
 
 gem 'anjlab-bootstrap-rails', '>= 2.3', require: 'bootstrap-rails'
 
+gem 'rdiscount'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

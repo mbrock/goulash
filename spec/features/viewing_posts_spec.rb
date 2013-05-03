@@ -8,7 +8,7 @@ feature 'Viewing posts' do
       text: 'This is my first post.',
       user: @user)
     @second_post = FactoryGirl.create(:post, title: 'Second post',
-      text: 'This is my second post.',
+      text: 'This is my *second* post.',
       user: @user)
 
     visit '/'
@@ -28,15 +28,23 @@ feature 'Viewing posts' do
 
     expect(page.current_url).to eql(post_url(@first_post))
 
-    within('h2') do
+    within('h3') do
       expect(page).to have_content('First post')
     end
 
-    within('h3') do
+    within('h4') do
       expect(page).to have_content('By foo@example.com')
     end
 
     expect(page).to have_content('This is my first post.')
+  end
+
+  scenario "Viewing a post with Markdown content" do
+    click_link 'Second post'
+
+    within "article > p > em" do
+      expect(page).to have_content('second')
+    end
   end
 
   scenario "Going back to index" do
