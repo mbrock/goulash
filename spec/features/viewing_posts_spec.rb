@@ -38,4 +38,11 @@ feature 'Viewing posts' do
 
     expect(page).to have_content('This is my first post.')
   end
+
+  scenario "Going back to index" do
+    click_link 'First post'
+    click_link 'Home'
+
+    expect(page.current_url).to eql(root_url)
+  end
 end

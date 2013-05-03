@@ -15,6 +15,9 @@
 <% end %>
 
 <nav>
+  <%= link_to 'Home', '/' %>
+  <%= link_to 'New post', new_post_path %>
+
   <%= link_to 'Sign up', new_user_registration_path %>
   <%= link_to 'Sign in', new_user_session_path %>
 </nav>
