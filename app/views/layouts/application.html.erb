@@ -8,21 +8,28 @@
 </head>
 <body>
 
-<% flash.each do |key, value| %>
-  <div class='flash' id='<%= key %>'>
-    <%= value %>
+  <div class="navbar">
+    <div class="navbar-inner">
+      <ul class="nav">
+        <li><%= link_to 'Home', '/' %></li>
+        <li><%= link_to 'New post', new_post_path %></li>
+      </ul>
+      <ul class="nav pull-right">
+        <li><%= link_to 'Sign up', new_user_registration_path %></li>
+        <li><%= link_to 'Sign in', new_user_session_path %></li>
+      </ul>
+    </div>
   </div>
-<% end %>
 
-<nav>
-  <%= link_to 'Home', '/' %>
-  <%= link_to 'New post', new_post_path %>
+  <div class="container">
+    <% flash.each do |key, value| %>
+      <div class='flash' id='<%= key %>'>
+        <%= value %>
+      </div>
+    <% end %>
 
-  <%= link_to 'Sign up', new_user_registration_path %>
-  <%= link_to 'Sign in', new_user_session_path %>
-</nav>
-
-<%= yield %>
+    <%= yield %>
+  </div>
 
 </body>
 </html>
