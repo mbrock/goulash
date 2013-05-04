@@ -60,3 +60,5 @@ group :test do
 end
 
 gem 'devise', github: 'plataformatec/devise', branch: 'rails4'
+
+gem 'flatui-rails', github: 'mbrock/flatui-rails'

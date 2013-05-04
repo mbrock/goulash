@@ -1,0 +1,45 @@
+@import "twitter/bootstrap"
+@import "twitter/bootstrap-responsive"
+@import "flat-ui"
+
+// postlist list
+.postlist
+  background-color: scale-color($base, $lightness: -15%)
+  border-radius: 8px 8px 6px 6px
+  color: scale-color($base, $lightness: 33%)
+  margin-bottom: 20px
+
+  ul
+    margin: 0
+    list-style-type: none
+
+  li
+    background-color: $base
+    cursor: pointer
+    margin-top: 2px
+    padding: 18px 42px 17px 25px
+    position: relative
+    +transition(.25s)
+    &:first-child
+      border-radius: 6px 6px 0 0
+      margin-top: 0
+    &:last-child
+      border-radius: 0 0 6px 6px
+      padding-bottom: 18px
+
+  a
+    display: block
+
+.postlist-icon
+  float: left
+  font-size: 24px
+  padding: 11px 22px 0 0
+
+.postlist-content
+  padding-top: 1px
+  overflow: hidden
+
+.postlist-name
+  color: $inverse
+  font-size: 17px
+  margin: 1px 0 3px

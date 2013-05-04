@@ -1,6 +1,16 @@
-<h2>Posts</h2>
-<ul>
-  <% @posts.each do |post| %>
-    <li><%= link_to post.title, post %></li>
-  <% end %>
-</ul>
+<div class="postlist">
+  <ul>
+    <% @posts.each do |post| %>
+      <li>
+        <div class="postlist-content">
+          <a href="<%= url_for post %>">
+            <h4 class="postlist-name">
+              <%= post.title %>
+            </h4>
+          </a>
+          <%= post.user.email %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
