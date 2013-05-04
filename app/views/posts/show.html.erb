@@ -4,4 +4,20 @@
     <small>By <%= @post.user.email %></small>
   </h3>
   <%= raw @text_html %>
+
+  <section class="comments">
+    <h4>Comments</h4>
+    <% @post.comments.each do |comment| %>
+      <div class="comment well">
+        <span class="author pull-right">
+          <%= comment.user.email %>
+        </span>
+        <div>
+          <%= raw comment.text_html %>
+        </div>
+      </div>
+    <% end %>
+  </section>
+
+  <%= link_to 'Add comment', new_post_comment_path(@post) %>
 </article>
