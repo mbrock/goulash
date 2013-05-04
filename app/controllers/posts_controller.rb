@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
 
   def index
-    @posts = Post.all
+    @post_groups = Post.grouped_by_day
   end
 
   def new

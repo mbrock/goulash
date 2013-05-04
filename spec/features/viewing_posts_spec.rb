@@ -4,12 +4,16 @@ feature 'Viewing posts' do
   before do
     @user = FactoryGirl.create(:user, email: 'foo@example.com')
 
-    @first_post = FactoryGirl.create(:post, title: 'First post',
+    @first_post = FactoryGirl.create(:post, 
+      title: 'First post',
       text: 'This is my first post.',
-      user: @user)
-    @second_post = FactoryGirl.create(:post, title: 'Second post',
+      user: @user,
+      created_at: Date.current)
+    @second_post = FactoryGirl.create(:post, 
+      title: 'Second post',
       text: 'This is my *second* post.',
-      user: @user)
+      user: @user,
+      created_at: Date.yesterday)
 
     visit '/'
     click_link 'Sign in'
@@ -21,6 +25,16 @@ feature 'Viewing posts' do
   scenario 'Listing all posts' do
     expect(page).to have_content('First post')
     expect(page).to have_content('Second post')
+  end
+
+  scenario 'Listing all posts should group by day' do
+    within 'section.posts:nth-child(1)' do
+      expect(page).to have_content('Today')
+    end
+
+    within 'section.posts:nth-child(2)' do
+      expect(page).to have_content('Yesterday')
+    end
   end
 
   scenario "Viewing a post" do

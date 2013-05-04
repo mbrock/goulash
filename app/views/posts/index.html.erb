@@ -1,16 +1,21 @@
-<div class="postlist">
-  <ul>
-    <% @posts.each do |post| %>
-      <li>
-        <div class="postlist-content">
-          <a href="<%= url_for post %>">
-            <h4 class="postlist-name">
-              <%= post.title %>
-            </h4>
-          </a>
-          <%= post.user.email %>
-        </div>
-      </li>
-    <% end %>
-  </ul>
-</div>
+<% @post_groups.each do |date, posts| %>
+  <section class="posts">
+    <h5><%= date.casual.capitalize %></h5>
+    <div class="postlist">
+      <ul>
+        <% posts.each do |post| %>
+          <li>
+            <div class="postlist-content">
+              <a href="<%= url_for post %>">
+                <h4 class="postlist-name">
+                  <%= post.title %>
+                </h4>
+              </a>
+              <%= post.user.email %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </section>
+<% end %>

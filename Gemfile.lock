@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/mbrock/date-casually.git
+  revision: 93da4f6fd4f4f15e343a47bc6d9c7fdd9e5a80c6
+  specs:
+    date-casually (0.2.0)
+      i18n (>= 0.4.1)
+
+GIT
   remote: git://github.com/mbrock/flatui-rails.git
   revision: 0649954f0e47369924055fe2b6d57a1acad59af8
   specs:
@@ -183,6 +190,7 @@ DEPENDENCIES
   anjlab-bootstrap-rails (>= 2.3)
   capybara (= 2.0.2)
   coffee-rails (~> 4.0.0)
+  date-casually!
   devise!
   factory_girl (= 4.2.0)
   factory_girl_rails (= 4.2.1)
