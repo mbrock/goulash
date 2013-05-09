@@ -1,11 +1,5 @@
 - @post_groups.each do |date, posts|
   %section.posts
     %h5= date.casual.capitalize
-    .postlist
-      %ul
-        - posts.each do |post|
-          %li
-            .postlist-content
-              %a{href: url_for(post) }
-                %h4.postlist-name= post.title
-              = post.user.email
+    %ul.postlist
+      = render posts

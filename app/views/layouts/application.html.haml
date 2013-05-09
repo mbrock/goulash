@@ -7,17 +7,7 @@
     = csrf_meta_tags
 
   %body
-    .navbar.navbar-inverse#gou-menubar
-      .navbar-inner
-        = link_to 'Goulash', root_path, class: 'brand'
-        %ul.nav
-          %li= link_to ' New post', new_post_path
-        %ul.nav.pull-right
-          - if user_signed_in?
-            %li= link_to 'Log out', destroy_user_session_path, method: :delete
-          - else
-            %li= link_to 'Sign up', new_user_registration_path
-            %li= link_to 'Sign in', new_user_session_path
+    = render 'navbar'
 
     .container
       .row

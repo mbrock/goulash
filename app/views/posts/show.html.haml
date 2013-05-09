@@ -9,9 +9,6 @@
 
   %section.comments
     %h5 Comments
-    - @post.comments.each do |comment|
-      .comment.well
-        %span.author.pull-right= comment.user.email
-        %div= raw comment.text_html
+    = render partial: 'comment', collection: @post.comments
 
   = link_to 'Add comment', new_post_comment_path(@post), class: "btn btn-info"
