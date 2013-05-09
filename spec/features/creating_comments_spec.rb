@@ -13,6 +13,7 @@ feature "Creating comments" do
 
   scenario "Adding a comment" do
     visit post_path(@post)
+
     click_link 'Add comment'
     find('textarea').set '*Yay*'
     click_button 'Create Comment'

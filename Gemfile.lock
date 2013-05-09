@@ -1,4 +1,19 @@
 GIT
+  remote: git://github.com/bmabey/database_cleaner.git
+  revision: ce1d16298960c28182568611892bfa4c386cfaf5
+  specs:
+    database_cleaner (0.9.1)
+
+GIT
+  remote: git://github.com/jonleighton/poltergeist.git
+  revision: 6494884aca1b61096e7279cd986891727597ed0b
+  specs:
+    poltergeist (1.3.0)
+      capybara (~> 2.1.0)
+      faye-websocket (>= 0.4.4, < 0.5.0)
+      http_parser.rb (~> 0.5.3)
+
+GIT
   remote: git://github.com/mbrock/date-casually.git
   revision: 93da4f6fd4f4f15e343a47bc6d9c7fdd9e5a80c6
   specs:
@@ -16,10 +31,10 @@ GIT
 
 GIT
   remote: git://github.com/plataformatec/devise.git
-  revision: e26314ee8dcd1f82cd2d0dc499ded5289c3469ab
+  revision: 6b5988d756d780903bf8c9ccb3e2b3b724ccebe8
   branch: rails4
   specs:
-    devise (2.2.3)
+    devise (2.2.4)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
@@ -53,24 +68,23 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     addressable (2.3.4)
-    anjlab-bootstrap-rails (2.3.1.1)
+    anjlab-bootstrap-rails (2.3.1.2)
       railties (>= 3.0)
       sass (>= 3.2)
     arel (4.0.0)
-    atomic (1.1.8)
+    atomic (1.1.9)
     bcrypt-ruby (3.0.1)
     bootstrap-sass (2.2.2.0)
       sass (~> 3.2)
     builder (3.1.4)
-    capybara (2.0.2)
+    capybara (2.1.0)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
-      selenium-webdriver (~> 2.0)
-      xpath (~> 1.0.0)
-    childprocess (0.3.9)
-      ffi (~> 1.0, >= 1.0.11)
+      xpath (~> 2.0)
+    capybara-screenshot (0.3.6)
+      capybara (>= 1.0, < 3)
     coffee-rails (4.0.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0.beta, < 5.0)
@@ -80,6 +94,7 @@ GEM
     coffee-script-source (1.6.2)
     diff-lcs (1.2.4)
     erubis (2.7.0)
+    eventmachine (1.0.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
     factory_girl (4.2.0)
@@ -87,7 +102,8 @@ GEM
     factory_girl_rails (4.2.1)
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
-    ffi (1.8.1)
+    faye-websocket (0.4.7)
+      eventmachine (>= 0.12.0)
     haml (4.0.2)
       tilt
     haml-rails (0.4)
@@ -96,6 +112,7 @@ GEM
       haml (>= 3.1, < 4.1)
       railties (>= 3.1, < 4.1)
     hike (1.2.2)
+    http_parser.rb (0.5.3)
     i18n (0.6.4)
     jbuilder (1.0.2)
       activesupport (>= 3.0.0)
@@ -111,7 +128,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.23)
     minitest (4.7.4)
-    multi_json (1.7.2)
+    multi_json (1.7.3)
     nokogiri (1.5.9)
     orm_adapter (0.4.0)
     polyglot (0.3.3)
@@ -132,7 +149,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.0.4)
-    rdiscount (2.0.7.2)
+    rdiscount (2.0.7.3)
     rdoc (3.12.2)
       json (~> 1.4)
     rspec-core (2.13.1)
@@ -146,7 +163,6 @@ GEM
       rspec-core (~> 2.13.0)
       rspec-expectations (~> 2.13.0)
       rspec-mocks (~> 2.13.0)
-    rubyzip (0.9.9)
     sass (3.2.8)
     sass-rails (4.0.0.rc1)
       railties (>= 4.0.0.beta, < 5.0)
@@ -156,11 +172,6 @@ GEM
     sdoc (0.3.20)
       json (>= 1.1.3)
       rdoc (~> 3.10)
-    selenium-webdriver (2.32.1)
-      childprocess (>= 0.2.5)
-      multi_json (~> 1.0)
-      rubyzip
-      websocket (~> 1.0.4)
     sprockets (2.9.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -174,20 +185,19 @@ GEM
     thor (0.18.1)
     thread_safe (0.1.0)
       atomic
-    tilt (1.4.0)
+    tilt (1.4.1)
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
     turbolinks (1.1.1)
       coffee-rails
     tzinfo (0.3.37)
-    uglifier (2.0.1)
+    uglifier (2.1.0)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
     warden (1.2.1)
       rack (>= 1.0)
-    websocket (1.0.7)
-    xpath (1.0.0)
+    xpath (2.0.0)
       nokogiri (~> 1.3)
 
 PLATFORMS
@@ -195,8 +205,10 @@ PLATFORMS
 
 DEPENDENCIES
   anjlab-bootstrap-rails (>= 2.3)
-  capybara (= 2.0.2)
+  capybara (~> 2.1.0)
+  capybara-screenshot
   coffee-rails (~> 4.0.0)
+  database_cleaner!
   date-casually!
   devise!
   factory_girl (= 4.2.0)
@@ -206,6 +218,7 @@ DEPENDENCIES
   jbuilder (~> 1.0.1)
   jquery-rails
   launchy (= 2.3.0)
+  poltergeist!
   rails (= 4.0.0.rc1)
   rdiscount
   rspec-rails (~> 2.12)

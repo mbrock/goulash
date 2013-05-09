@@ -34,8 +34,11 @@ group :test, :development do
 end
 
 group :test do
-  gem 'capybara', '2.0.2'
+  gem 'capybara', '~> 2.1.0'
+  gem 'capybara-screenshot'
+  gem 'database_cleaner', github: 'bmabey/database_cleaner'
   gem 'factory_girl_rails', '4.2.1'
   gem 'factory_girl', '4.2.0'
   gem 'launchy', '2.3.0'
+  gem 'poltergeist', github: 'jonleighton/poltergeist'
 end
