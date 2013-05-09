@@ -62,7 +62,7 @@ feature 'Viewing posts' do
 
   scenario "Going back to index" do
     click_link 'First post'
-    click_link 'Home'
+    click_link 'Goulash'
 
     expect(page.current_url).to eql(root_url)
   end

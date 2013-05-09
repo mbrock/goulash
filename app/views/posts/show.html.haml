@@ -1,0 +1,17 @@
+%article
+  %h3
+    = @post.title
+    %small.pull-right
+      By
+      %strong= @post.user.email
+
+  = raw @text_html
+
+  %section.comments
+    %h5 Comments
+    - @post.comments.each do |comment|
+      .comment.well
+        %span.author.pull-right= comment.user.email
+        %div= raw comment.text_html
+
+  = link_to 'Add comment', new_post_comment_path(@post), class: "btn btn-info"
