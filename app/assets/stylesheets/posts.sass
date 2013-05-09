@@ -1,12 +1,9 @@
-@import "twitter/bootstrap"
-@import "twitter/bootstrap-responsive"
-@import "flat-ui"
 
 // postlist list
 .postlist
   background-color: scale-color($base, $lightness: -15%)
   border-radius: 8px 8px 6px 6px
-  color: scale-color($base, $lightness: 33%)
+  color: scale-color($base, $lightness: 50%)
   margin-bottom: 20px
 
   ul
@@ -21,10 +18,12 @@
     position: relative
     +transition(.25s)
     &:first-child
-      border-radius: 6px 6px 0 0
+      border-top-left-radius: 5px
+      border-top-right-radius: 5px
       margin-top: 0
     &:last-child
-      border-radius: 0 0 6px 6px
+      border-bottom-left-radius: 5px
+      border-bottom-right-radius: 5px
       padding-bottom: 18px
 
   a

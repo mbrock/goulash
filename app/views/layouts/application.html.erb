@@ -8,11 +8,11 @@
 </head>
 <body>
 
-  <div class="navbar navbar-inverse">
+  <div class="navbar navbar-inverse" id="gou-menubar">
     <div class="navbar-inner">
+      <%= link_to 'Goulash', root_path, class: 'brand' %>
       <ul class="nav">
-        <li><%= link_to 'Home', '/' %></li>
-        <li><%= link_to ' New post', new_post_path, class: 'fui-new-24' %></li>
+        <li><%= link_to ' New post', new_post_path %></li>
       </ul>
       <ul class="nav pull-right">
         <% if user_signed_in? %>
@@ -27,14 +27,16 @@
 
   <div class="container">
     <div class="row">
-      <% flash.each do |key, value| %>
-        <div class='flash' id='<%= key %>'>
-          <%= value %>
-        </div>
-      <% end %>
-    </div>
+      <div class="span12">
+        <% flash.each do |key, value| %>
+          <div class='flash' id='<%= key %>'>
+            <%= value %>
+          </div>
+        <% end %>
 
-    <%= yield %>
+        <%= yield %>
+      </div>
+    </div>
   </div>
 
 </body>

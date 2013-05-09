@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: git://github.com/mbrock/flatui-rails.git
-  revision: 0649954f0e47369924055fe2b6d57a1acad59af8
+  revision: b535cd71adccddeade85b156de06f7f69170487a
   specs:
     flatui-rails (0.0.4)
       bootstrap-sass (= 2.2.2)
@@ -16,13 +16,13 @@ GIT
 
 GIT
   remote: git://github.com/plataformatec/devise.git
-  revision: e8d1c9ca235f5593c66a01d6e55b65ecc1fcaa25
+  revision: e26314ee8dcd1f82cd2d0dc499ded5289c3469ab
   branch: rails4
   specs:
     devise (2.2.3)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
-      railties (~> 4.0.0.beta)
+      railties (>= 3.2.6, < 5)
       warden (~> 1.2.1)
 
 GEM
