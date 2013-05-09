@@ -41,4 +41,8 @@ group :test do
   gem 'factory_girl', '4.2.0'
   gem 'launchy', '2.3.0'
   gem 'poltergeist', github: 'jonleighton/poltergeist'
+
+  gem 'ZenTest', '~> 4.9.1'
+  gem 'autotest-rails', '~> 4.1.2'
+  gem "autotest-fsevent", "~> 0.2.8"
 end

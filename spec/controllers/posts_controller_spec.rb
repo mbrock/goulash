@@ -51,6 +51,7 @@ describe PostsController do
       expect {
         post :create, post: FactoryGirl.attributes_for(:post)
       }.to change(Post, :count).by(1)
+      response.should redirect_to(Post.last)
     end
 
     it "sets current user as author on new post" do
