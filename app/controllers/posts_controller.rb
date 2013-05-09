@@ -21,7 +21,6 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @text_html = RDiscount.new(@post.text).to_html
   end
 
   private

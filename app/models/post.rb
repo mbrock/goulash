@@ -7,4 +7,8 @@ class Post < ActiveRecord::Base
       post.created_at.to_date
     end.sort_by { |k, v| k }.reverse
   end
+
+  def text_html
+    RDiscount.new(text).to_html
+  end
 end

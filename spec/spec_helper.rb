@@ -26,9 +26,9 @@ RSpec.configure do |config|
 
   config.before(:each) { DatabaseCleaner.start }
   config.after(:each) { DatabaseCleaner.clean }
+  
+  config.include Devise::TestHelpers, :type => :controller
 end
 
 require 'capybara/poltergeist'
 Capybara.javascript_driver = :poltergeist
-
-require 'capybara-screenshot/rspec'
