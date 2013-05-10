@@ -1,14 +1,14 @@
-%article
-  %h3
+article
+  h3
     = @post.title
-    %small.pull-right
-      By
-      %strong= @post.user.username
+    small.pull-right
+      ' By
+      strong= @post.user.username
 
   = raw @post.text_html
 
-  %section.comments
-    %h5 Comments
+  section.comments
+    h5 Comments
     = render partial: 'comment', collection: @post.comments
 
   = link_to 'Add comment', new_post_comment_path(@post), class: "btn btn-info"

@@ -1,6 +1,6 @@
 .row-fluid
   .span8
-    %h2 New comment
+    h2 New comment
     = form_for [@post, @comment] do |f|
-      %p= f.text_area :text, class: 'big-text'
+      p= f.text_area :text, class: 'big-text'
       = f.submit class: "btn btn-primary"
