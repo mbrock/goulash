@@ -2,7 +2,7 @@ require 'spec_helper'
 
 feature "Creating posts" do
   before do
-    @user = FactoryGirl.create(:user, email: 'foo@example.com')
+    @user = FactoryGirl.create(:user)
 
     @first_post = FactoryGirl.create(:post, title: 'First post',
       text: 'This is my first post.')
@@ -13,7 +13,7 @@ feature "Creating posts" do
     click_link 'New post'
     page.should have_content('You need to sign in or sign up before continuing.')
 
-    fill_in 'Email', with: 'foo@example.com'
+    fill_in 'Username', with: @user.username
     fill_in 'Password', with: 'password'
     click_button 'Sign in'
 

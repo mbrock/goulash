@@ -2,7 +2,7 @@ require 'spec_helper'
 
 feature 'Viewing posts' do
   before do
-    @user = FactoryGirl.create(:user, email: 'foo@example.com')
+    @user = FactoryGirl.create(:user, username: 'foo')
 
     @first_post = FactoryGirl.create(:post, 
       title: 'First post',
@@ -17,13 +17,14 @@ feature 'Viewing posts' do
 
     visit '/'
     click_link 'Sign in'
-    fill_in 'Email', with: 'foo@example.com'
+    fill_in 'Username', with: @user.username
     fill_in 'Password', with: 'password'
     click_button 'Sign in'
   end
 
   scenario 'Listing all posts' do
     expect(page).to have_content('First post')
+    expect(page).to have_content('foo')
     expect(page).to have_content('Second post')
   end
 
@@ -45,7 +46,7 @@ feature 'Viewing posts' do
     within('h3') do
       expect(page).to have_content('First post')
       within('small') do
-        expect(page).to have_content('By foo@example.com')
+        expect(page).to have_content('By foo')
       end
     end
 

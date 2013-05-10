@@ -6,7 +6,7 @@ feature "Creating comments" do
     @commenter = FactoryGirl.create :user
 
     visit new_user_session_path
-    fill_in 'Email', with: @commenter.email
+    fill_in 'Username', with: @commenter.username
     fill_in 'Password', with: 'password'
     click_button 'Sign in'
   end
@@ -23,7 +23,7 @@ feature "Creating comments" do
 
     within 'article .comments > div' do
       within 'span.author' do
-        expect(page).to have_content(@commenter.email)
+        expect(page).to have_content(@commenter.username)
       end
 
       within 'div em' do
